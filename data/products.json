@@ -1,0 +1,35 @@
+[
+    {
+        "productName": "Goat and Sheep Cheese",
+        "image": "🧀",
+        "from": "Portugal",
+        "nutrients": "Vitamin A, Calcium",
+        "quantity": "250g",
+        "price": "5.00",
+        "organic": false
+    },
+    {
+        "productName": "Baby Carrots",
+        "image": "🥕",
+        "from": "France",
+        "nutrients": "Vitamin A, Vitamin K",
+        "quantity": "20",
+        "price": "3.00"
+    },
+    {
+        "productName": "Fresh Avocados",
+        "image": "🥑",
+        "from": "Spain",
+        "nutrients": "Vitamin B, Vitamin K",
+        "quantity": "4",
+        "price": "6.50"
+    },
+    {
+        "productName": "Apollo Broccoli",
+        "image": "🥦",
+        "from": "Portugal",
+        "nutrients": "Vitamin C, Vitamin K",
+        "quantity": "3",
+        "price": "5.50"
+    }
+]

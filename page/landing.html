@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        
+        body{
+            
+            background-color:#32de84;
+            padding-bottom:2rem;
+        }
+        .title{
+            font-family:"Lucida Console", "Courier New", monospace;
+            margin:2rem 0;
+            text-align:center;
+            color:darkslateblue;
+        }
+        .products{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            gap:1.5rem;
+            padding:0.5rem;
+        }
+        
+        .product .icon{
+            font-size:100px;
+            display:block;
+            margin:auto;
+            width:fit-content;
+        }
+        .product .container{background-color:white;}
+        .product .image{
+            background-color:#0066b2;
+            padding-bottom:0.5rem;
+        }
+        .product .header{
+            background-color:#32de84;
+            color:white;
+            padding:1rem 0;
+            text-align:center;
+            font-family:"Lucida Console", "Courier New", monospace;
+            font-style:italic;
+        }
+        .product .info{
+            list-style-type:none;
+            padding:2rem 0.5rem;
+            display:flex;
+            flex-wrap:wrap;
+            width:90%;
+            margin:auto;
+            justify-content:space-around;
+            align-items:baseline;
+            gap:0.5rem;
+        }
+        .product .info li{width:45%;}
+        .product .info li:where(:not(:first-child)) span:first-child{font-style: italic;}
+        .product .info li:where(:not(:first-child)) span:last-child{margin-left:0.5rem}
+
+
+        .card {
+        width:90%;
+        max-width:590px;
+        margin:auto;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        }
+
+/* On mouse-over, add a deeper shadow */
+        .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        #product-form{
+            width:95%;
+            margin:auto;
+            padding:0 5px;
+            
+
+        }
+        #product-form .container{
+            display:flex;
+            flex-wrap:wrap;
+            border-radius:7px;
+            gap:0.5rem;
+            border-radius:5px;
+            align-items:center;
+            justify-content:space-between;
+            padding:1rem 0;
+            padding-left:0.5rem;
+            background-color:#35c87b;
+        }
+        .item{width:45%;}
+        .input{
+            width:90%;
+            max-width:500px;
+        }
+        label{margin-bottom:0.5rem;}
+        .buttons{
+            width:100%;
+            display:flex;
+            gap:1rem;
+            align-items:center;
+            justify-content:center;
+            padding:1rem 0;
+
+        }
+        .buttons button{
+            font-size:17px;
+            padding:0.5rem 1rem;
+            background-color:#35c87b;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        label,.input{display:block;}
+        label{
+            width:fit-content;
+            margin-bottom:0.5rem;
+        }
+        @media screen and (min-width:950px){
+            .card{width:48%;}
+        }
+        @media screen and (min-width:700px){
+            #product-form .container{padding-left:0;}
+            label,.input{
+                
+                margin-left:auto;
+                margin-right:auto;
+            }
+            .buttons button{font-size:25px;}
+        }
+        @media screen and (min-width:450px){
+            .product .info{width:75%;}
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1 class="title">FARM PRODUCTS</h1>
+
+    <form id="product-form" action="/" method="post">
+        <div class="container">
+            <div class="item">
+                <label for="pname">Product name</label>
+                <input class="input" type="text" id="pname" name="productName">
+            </div>
+            
+            <div class="item">
+                <label for="pimage">Product image Code</label>
+                <input class="input" type="text" id="pimage" name="image">
+            </div>
+    
+            <div class="item">
+                <label for="from">From</label>
+                <input class="input" type="text" id="from" name="from">
+            </div>
+            <div class="item">
+                <label for="pnutrients">Nutrients</label>
+                <input class="input" type="text" id="pnutrients" name="nutrients">
+            </div>
+            <div class="item">
+                <label for="pquantity">Quantity</label>
+                <input class="input" type="text" id="pquantity" name="quantity">
+            </div>
+            <div class="item">
+                <label for="price">Price</label>
+                <input class="input" type="text" id="price" name="price">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="add" class="submit" type="submit" name="submit"  value="add">Add product</button>
+            <button id="remove" class="submit" type="submit" name="submit" value="remove">Remove product</button>
+        </div>
+        
+    </form>
+
+    <ul class="products">
+        {%PRODUCTS%}
+    </ul>
+    
+</body>
+
+</html>
